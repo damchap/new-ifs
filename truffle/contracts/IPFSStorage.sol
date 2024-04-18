@@ -2,13 +2,13 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract IPFSStorage {
-    string ipfsHash;
+    string[] ipfsHashes;
 
-    function setHash(string memory _ipfsHash) public {
-        ipfsHash = _ipfsHash;
+    function addHash(string memory _ipfsHash) public {
+        ipfsHashes.push(_ipfsHash);
     }
 
-    function getHash() public view returns (string memory) {
-        return ipfsHash;
+    function getHashes() public view returns (string[] memory) {
+        return ipfsHashes;
     }
 }
